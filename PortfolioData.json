@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Creative Portfolio Project",
+      "description": "A modern and clean design with smooth animations.",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+      "image": "/portfolio-image1.jpg",
+      "liveLink": "https://example.com/1",
+      "repoLink": "https://github.com/example/repo1"
+    },
+    {
+      "id": "2",
+      "title": "E-commerce Platform",
+      "description": "A fully responsive e-commerce website with authentication.",
+      "technologies": ["Next.js", "Redux", "Node.js", "MongoDB"],
+      "image": "/portfolio-image2.jpg",
+      "liveLink": "https://example.com/2",
+      "repoLink": "https://github.com/example/repo2"
+    },
+    {
+      "id": "3",
+      "title": "SaaS Dashboard",
+      "description": "A dashboard for analytics and user management.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+      "image": "/portfolio-image3.jpg",
+      "liveLink": "https://example.com/3",
+      "repoLink": "https://github.com/example/repo3"
+    }
+  ]
+}
