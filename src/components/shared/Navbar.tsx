@@ -97,7 +97,12 @@ export default function Navbar({ session }: { session: TSession }) {
                       >
                         <MenuItem>
                           <button
-                            onClick={() => signOut()}
+                            onClick={() =>
+                              signOut({
+                                callbackUrl:
+                                  "https://my-portfolio-psi-ten-98.vercel.app",
+                              })
+                            }
                             className="block px-3 py-2 text-black hover:text-gray-400"
                           >
                             Logout
@@ -151,7 +156,11 @@ export default function Navbar({ session }: { session: TSession }) {
               )}
               {session ? (
                 <DisclosureButton
-                  onClick={() => signOut()}
+                  onClick={() =>
+                    signOut({
+                      callbackUrl: "https://my-portfolio-psi-ten-98.vercel.app",
+                    })
+                  }
                   className="block px-3 py-2 text-white hover:text-gray-400"
                 >
                   Logout
