@@ -23,7 +23,7 @@
 1️⃣ **Clone the Repository**
 
 ```sh
- git clone https://github.com/your-repo/bookstore.git
+ git clone https://github.com/Minhajul-Shobuj/my-portfolio-front-end
 ```
 
 2️⃣ **Install Dependencies**
