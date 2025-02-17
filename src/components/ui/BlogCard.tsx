@@ -7,10 +7,10 @@ const BlogCard = ({ blog }: { blog: TBlog & { _id: string } }) => {
     <div className="bg-white rounded-2xl shadow-md overflow-hidden transition hover:shadow-lg">
       {blog.thumbnail ? (
         <Image
-          src={blog.thumbnail}
-          alt={blog.title}
-          width={400} // Define width
-          height={200} // Define height
+          src={blog?.thumbnail}
+          alt={blog?.title}
+          width={400}
+          height={200}
           className="w-full h-52 object-cover"
         />
       ) : (
@@ -20,21 +20,21 @@ const BlogCard = ({ blog }: { blog: TBlog & { _id: string } }) => {
       )}
 
       <div className="p-4">
-        <h2 className="text-lg font-semibold">{blog.title}</h2>
+        <h2 className="text-lg font-semibold">{blog?.title}</h2>
         <p className="text-gray-600 text-sm mt-2 line-clamp-3">
-          {blog.content}
+          {blog?.content}
         </p>
 
         <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
-          <span>By {blog.author}</span>
+          <span>By {blog?.author}</span>
           <span
-            className={blog.isPublished ? "text-green-500" : "text-red-500"}
+            className={blog?.isPublished ? "text-green-500" : "text-red-500"}
           >
-            {blog.isPublished ? "Published" : "Draft"}
+            {blog?.isPublished ? "Published" : "Draft"}
           </span>
         </div>
         <Link
-          href={`/blog/${blog._id}`}
+          href={`/blog/${blog?._id}`}
           className="mt-4 inline-block text-blue-500 hover:underline"
         >
           View Details
