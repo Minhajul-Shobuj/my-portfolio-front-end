@@ -10,19 +10,21 @@ const AllBlogs = () => {
   const blogs: TBlog[] = data?.data ? data.data : [];
   return (
     <>
-      {blogs.length === 0 ? (
-        <div className="flex items-center justify-center h-full py-10">
-          <h1 className="text-2xl font-semibold text-gray-600">
-            No Blogs Available
-          </h1>
-        </div>
-      ) : (
-        <div className="my-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
-            <BlogCard key={blog._id} blog={blog} />
-          ))}
-        </div>
-      )}
+      <div className="mx-4">
+        {blogs.length === 0 ? (
+          <div className="flex items-center justify-center h-full py-10">
+            <h1 className="text-2xl font-semibold text-gray-600">
+              No Blogs Available
+            </h1>
+          </div>
+        ) : (
+          <div className="my-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {blogs.map((blog) => (
+              <BlogCard key={blog._id} blog={blog} />
+            ))}
+          </div>
+        )}
+      </div>
     </>
   );
 };

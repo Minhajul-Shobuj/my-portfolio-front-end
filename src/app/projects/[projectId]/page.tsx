@@ -6,10 +6,8 @@ import React from "react";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
-  console.log(projectId);
   const { data } = useGetProjectByIdQuery(projectId);
   const project = data?.data;
-  console.log(project);
   return (
     <div>
       <div className="max-w-4xl mx-auto my-10 p-6 bg-white rounded-2xl shadow-lg">
