@@ -1,18 +1,10 @@
 "use client";
-
-import { TSession } from "@/types";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Menu,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { signOut } from "next-auth/react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -23,7 +15,7 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navbar({ session }: { session: TSession }) {
+export default function Navbar() {
   const pathname = usePathname();
   return (
     <Disclosure
@@ -66,62 +58,6 @@ export default function Navbar({ session }: { session: TSession }) {
                       {item.name}
                     </Link>
                   ))}
-                  {session?.user && (
-                    <Link
-                      href="/dashboard"
-                      className={`hover:text-gray-400 transition ${
-                        pathname === "/dashboard"
-                          ? "underline underline-offset-4 text-indigo-400"
-                          : ""
-                      }`}
-                    >
-                      Dashboard
-                    </Link>
-                  )}
-                  {session?.user ? (
-                    <Menu as="div" className="relative ml-3">
-                      <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                        <span className="absolute -inset-1.5" />
-                        <span className="sr-only">Open user menu</span>
-                        <Image
-                          src={session.user.image}
-                          alt="User Profile"
-                          width={100}
-                          height={100}
-                          className="size-8 rounded-full"
-                        />
-                      </MenuButton>
-                      <MenuItems
-                        transition
-                        className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-                      >
-                        <MenuItem>
-                          <button
-                            onClick={() =>
-                              signOut({
-                                callbackUrl:
-                                  "https://my-portfolio-psi-ten-98.vercel.app",
-                              })
-                            }
-                            className="block px-3 py-2 text-black hover:text-gray-400"
-                          >
-                            Logout
-                          </button>
-                        </MenuItem>
-                      </MenuItems>
-                    </Menu>
-                  ) : (
-                    <Link
-                      href={"/login"}
-                      className={`hover:text-gray-400 transition ${
-                        pathname === "/login"
-                          ? "underline underline-offset-4 text-indigo-400"
-                          : ""
-                      }`}
-                    >
-                      Login
-                    </Link>
-                  )}
                 </div>
               </div>
             </div>
@@ -142,41 +78,6 @@ export default function Navbar({ session }: { session: TSession }) {
                   {item.name}
                 </DisclosureButton>
               ))}
-              {session?.user && (
-                <Link
-                  href="/dashboard"
-                  className={`block px-3 py-2 text-white hover:text-gray-400 ${
-                    pathname === "/dashboard"
-                      ? "underline underline-offset-4 text-indigo-400"
-                      : ""
-                  }`}
-                >
-                  Dashboard
-                </Link>
-              )}
-              {session ? (
-                <DisclosureButton
-                  onClick={() =>
-                    signOut({
-                      callbackUrl: "https://my-portfolio-psi-ten-98.vercel.app",
-                    })
-                  }
-                  className="block px-3 py-2 text-white hover:text-gray-400"
-                >
-                  Logout
-                </DisclosureButton>
-              ) : (
-                <Link
-                  href="/login"
-                  className={`block px-3 py-2 text-white hover:text-gray-400 ${
-                    pathname === "/login"
-                      ? "underline underline-offset-4 text-indigo-400"
-                      : ""
-                  }`}
-                >
-                  Login
-                </Link>
-              )}
             </div>
           </DisclosurePanel>
         </>

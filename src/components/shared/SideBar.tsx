@@ -10,7 +10,6 @@ import {
   FileText,
   MessageSquare,
   Menu,
-  X,
 } from "lucide-react";
 
 const navLinks = [
@@ -50,11 +49,8 @@ export default function Sidebar() {
         >
           <div className="flex justify-between items-center mb-5">
             <h2 className="text-xl font-bold">Dashboard</h2>
-            <button
-              className="block md:hidden"
-              onClick={() => setIsOpen(false)}
-            >
-              <X size={24} />
+            <button className="colour" onClick={() => setIsOpen(false)}>
+              Logout
             </button>
           </div>
           <nav>

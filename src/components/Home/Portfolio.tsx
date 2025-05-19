@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import img1 from "@/assets/project/Project (1).png";
+import img2 from "@/assets/focus-5648189_1280.jpg";
 import { TProject } from "@/types";
 import { useGetProjectsQuery } from "@/redux/api/project.api";
 
@@ -13,7 +13,7 @@ const Portfolio = () => {
     <section className="bg-black text-white">
       <div className="relative h-96">
         <Image
-          src={img1}
+          src={img2}
           alt="Portfolio"
           layout="fill"
           objectFit="cover"

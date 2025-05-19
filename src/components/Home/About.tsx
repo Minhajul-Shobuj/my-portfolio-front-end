@@ -11,7 +11,7 @@ const About = () => {
             ABOUT ME
           </h2>
         </div>
-        <p className="text-sm text-gray-600 max-w-lg px-4">
+        <p className="text-lg text-gray-600 max-w-lg px-4">
           Passionate about crafting elegant and efficient solutions, I thrive on
           building intuitive web experiences. With a strong foundation in
           front-end development and an eye for design, I transform ideas into

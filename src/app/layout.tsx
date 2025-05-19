@@ -4,9 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Providers from "@/lib/provider";
 import Footer from "@/components/shared/Footer";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/utils/authOptions";
-import { TSession } from "@/types";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -24,12 +21,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = (await getServerSession(authOptions)) as TSession;
   return (
     <Providers>
       <html lang="en">
         <body className={montserrat.className}>
-          <Navbar session={session} />
+          <Navbar />
           <div className="min-h-screen">{children}</div>
           <Footer />
         </body>
