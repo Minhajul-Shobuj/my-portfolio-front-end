@@ -19,13 +19,13 @@ const Portfolio = () => {
           objectFit="cover"
           className="opacity-80"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-start mt-8 justify-center">
           <h1 className="text-5xl font-bold border-2 border-white px-6 py-2">
             PORTFOLIO
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 p-6">
         {projects.map((project: TProject) => (
           <div key={project._id} className="relative group cursor-pointer">
             <Image
