@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import img2 from "@/assets/focus-5648189_1280.jpg";
+import img2 from "@/assets/banner.png";
 import { TProject } from "@/types";
 import { useGetProjectsQuery } from "@/redux/api/project.api";
 
@@ -10,19 +10,21 @@ const Portfolio = () => {
   const projects: TProject[] = data?.data ? data.data.slice(0, 3) : [];
 
   return (
-    <section className="bg-black text-white">
-      <div
-        className=" text-white bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${img2.src})` }}
-      >
-        <div className="relative  h-[15vh]">
+    <section>
+      <div>
+        <div
+          className="relative bg-cover bg-center h-[15vh]"
+          style={{ backgroundImage: `url(${img2.src})` }}
+        >
           <div className="absolute inset-0 flex items-start mt-8 justify-center">
-            <h1 className="text-5xl font-bold border-2 border-white px-6 py-2">
-              PORTFOLIO
-            </h1>
+            <div className="border-4 border-black px-8 py-2 inline-block mb-4 hover:bg-black hover:text-white transition-all duration-300">
+              <h2 className="text-lg font-bold tracking-[10px] font-montserrat">
+                PORTFOLIO
+              </h2>
+            </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 p-6">
+        <div className="grid grid-cols-2 md:grid-cols-3">
           {projects.map((project: TProject) => (
             <div key={project._id} className="relative group cursor-pointer">
               <Image
@@ -59,7 +61,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <div className="text-center py-4 text-gray-400">
+      <div className="bg-black text-center text-gray-400">
         <p className="my-2">And many more to come!</p>
         <Link href="/projects">
           <span className="inline-block border border-white text-white px-6  cursor-pointer hover:bg-white hover:text-black transition-colors duration-300">
