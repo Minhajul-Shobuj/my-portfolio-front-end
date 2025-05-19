@@ -24,7 +24,7 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 bg-black">
           {projects.map((project: TProject) => (
             <div key={project._id} className="relative group cursor-pointer">
               <Image
@@ -61,7 +61,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <div className="bg-black text-center text-gray-400">
+      <div className="bg-black text-center text-gray-400 py-3">
         <p className="my-2">And many more to come!</p>
         <Link href="/projects">
           <span className="inline-block border border-white text-white px-6  cursor-pointer hover:bg-white hover:text-black transition-colors duration-300">
