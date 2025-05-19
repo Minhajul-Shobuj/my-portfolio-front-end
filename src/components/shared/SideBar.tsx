@@ -10,6 +10,8 @@ import {
   FileText,
   MessageSquare,
   Menu,
+  PlusSquare,
+  Settings2,
 } from "lucide-react";
 
 const navLinks = [
@@ -22,6 +24,8 @@ const navLinks = [
   },
   { name: "Post Blog", href: "/dashboard/addBlog", icon: FileText },
   { name: "Manage Blogs", href: "/dashboard/manageBlog", icon: ListChecks },
+  { name: "Add Skills", href: "/dashboard/addSkills", icon: PlusSquare },
+  { name: "Manage Skills", href: "/dashboard/manageSkills", icon: Settings2 },
   { name: "Messages", href: "/dashboard/messages", icon: MessageSquare },
 ];
 

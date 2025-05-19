@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import TextEditor from "@/components/textEditor/TextEditor";
 import { useAddBlogMutation } from "@/redux/api/blog.api";
 import { useState } from "react";
 
@@ -97,14 +98,10 @@ const AddBlog = () => {
             >
               Content
             </label>
-            <textarea
-              id="content"
-              name="content"
-              onChange={handleChange}
-              rows={4}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
-              placeholder="Enter blog description"
-            ></textarea>
+            <TextEditor
+              value={formData.content}
+              onChange={(html) => setFormData({ ...formData, content: html })}
+            />
           </div>
           <button
             type="submit"
