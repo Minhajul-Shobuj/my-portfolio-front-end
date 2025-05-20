@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
 import { useAddProjectMutation } from "@/redux/api/project.api";
 import { useState } from "react";
 

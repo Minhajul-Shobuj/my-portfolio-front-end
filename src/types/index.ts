@@ -24,6 +24,16 @@ export type TSession = {
   };
 };
 
+export type TSkills = {
+  title: string;
+  skills: [
+    {
+      name: string;
+      icon: string;
+    }
+  ];
+};
+
 export type TMessage = {
   _id: string;
   name: string;
