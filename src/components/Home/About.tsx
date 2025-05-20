@@ -1,6 +1,6 @@
 import Image from "next/image";
 import sepImg from "@/assets/separatorBlack 1.png";
-import gearIcon from "@/assets/skills/c++.png";
+import gearIcon from "@/assets/c++.png";
 
 const About = () => {
   return (
