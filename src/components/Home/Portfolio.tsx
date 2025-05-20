@@ -36,7 +36,7 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 bg-black">
+        <div className="grid grid-cols-2 md:grid-cols-3 bg-black px-3">
           {projects.map((project: TProject) => (
             <div key={project._id} className="relative group cursor-pointer">
               <Image
