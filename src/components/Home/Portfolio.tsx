@@ -8,7 +8,7 @@ import Spinner from "../ui/Spinner";
 
 const Portfolio = () => {
   const { data, isLoading, isError } = useGetProjectsQuery(undefined);
-  const projects: TProject[] = data?.data ? data.data.slice(0, 3) : [];
+  const projects: TProject[] = data?.data ? data.data.slice(-3).reverse() : [];
   if (isLoading) {
     return <Spinner />;
   }
