@@ -8,13 +8,14 @@ import { useGetBlogsQuery } from "@/redux/api/blog.api";
 import { TBlog } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
+import Spinner from "../ui/Spinner";
 
 const Blog = () => {
   const { data, isLoading, isError } = useGetBlogsQuery(undefined);
   const blogs: TBlog[] = data?.data ?? [];
 
   if (isLoading) {
-    return <p className="text-center py-10">Loading blogs...</p>;
+    return <Spinner />;
   }
 
   if (isError || !blogs.length) {
@@ -45,7 +46,7 @@ const Blog = () => {
       >
         {blogs.map((blog) => (
           <SwiperSlide key={blog._id}>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col mx-auto max-w-[350px] w-full h-[400px] mb-3">
+            <div className="bg-white shadow-md hover:shadow-xl hover:scale-[1.02] transition-transform duration-300 rounded-lg overflow-hidden flex flex-col mx-auto max-w-[350px] w-full h-[400px] mb-3">
               <Image
                 height={100}
                 width={100}
@@ -58,11 +59,13 @@ const Blog = () => {
                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">
                   {blog.content}
                 </p>
-                <Link href={`/blog/${blog._id}`} className="mt-auto">
-                  <button className="bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-500 w-full">
-                    Read More
-                  </button>
-                </Link>
+                <div className="text-center mt-auto">
+                  <Link href={`/blog/${blog._id}`} passHref>
+                    <span className="text-black font-semibold border-l-2 border-r-2 border-black bg-transparent hover:bg-black hover:text-white hover:border-white transition-all duration-300 px-4 py-1 inline-block">
+                      Read More
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </SwiperSlide>

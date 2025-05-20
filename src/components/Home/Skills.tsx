@@ -3,6 +3,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { useGetSkillsQuery } from "@/redux/api/skillApi";
+import Spinner from "../ui/Spinner";
 
 interface Skill {
   name: string;
@@ -49,11 +50,7 @@ const Skills = () => {
   );
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-lg text-gray-700">Loading skills...</p>
-      </div>
-    );
+    return <Spinner />;
   }
 
   if (isError) {

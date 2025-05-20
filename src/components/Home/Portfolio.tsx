@@ -4,10 +4,22 @@ import Link from "next/link";
 import img2 from "@/assets/banner.png";
 import { TProject } from "@/types";
 import { useGetProjectsQuery } from "@/redux/api/project.api";
+import Spinner from "../ui/Spinner";
 
 const Portfolio = () => {
-  const { data } = useGetProjectsQuery(undefined);
+  const { data, isLoading, isError } = useGetProjectsQuery(undefined);
   const projects: TProject[] = data?.data ? data.data.slice(0, 3) : [];
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg text-red-500">Failed to load Projects.</p>
+      </div>
+    );
+  }
 
   return (
     <section>

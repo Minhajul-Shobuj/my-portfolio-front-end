@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -23,21 +24,37 @@ const Footer = () => {
 
       {/* Social Media Icons */}
       <div className="flex justify-center gap-6 my-4">
-        <a href="#" className="text-white text-2xl hover:text-gray-400">
+        <Link
+          className="text-white text-2xl hover:text-gray-400"
+          href="https://www.facebook.com/minhajul.shobuj.2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaFacebookF />
-        </a>
-        <a href="#" className="text-white text-2xl hover:text-gray-400">
+        </Link>
+        <Link
+          className="text-white text-2xl hover:text-gray-400"
+          href="https://www.linkedin.com/in/md-minhajul-islam-a537601a6/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaLinkedinIn />
-        </a>
-        <a href="#" className="text-white text-2xl hover:text-gray-400">
+        </Link>
+        <Link
+          className="text-white text-2xl hover:text-gray-400"
+          href="https://www.instagram.com/minhajulshobuj/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaInstagram />
-        </a>
-        <a href="#" className="text-white text-2xl hover:text-gray-400">
+        </Link>
+        <a
+          href="mailto:mdminhajul@gmail.com"
+          className="text-white text-2xl hover:text-gray-400"
+        >
           <FaEnvelope />
         </a>
       </div>
-
-      {/* Copyright Text */}
       <p className="text-gray-400">
         Copyright &copy; {currentYear.getFullYear()} - All right reserved by Md
         Minhajul Islam
