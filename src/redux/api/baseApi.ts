@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://portfolio-backend-gamma-ebon.vercel.app/api",
+  baseUrl: process.env.BASEAPI as string,
   prepareHeaders: (headers) => {
     headers.set("Content-Type", "application/json");
     return headers;

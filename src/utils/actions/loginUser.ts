@@ -5,17 +5,14 @@ import { cookies } from "next/headers";
 
 export const loginUser = async (data: { email: string; password: string }) => {
   try {
-    const res = await fetch(
-      `https://portfolio-backend-gamma-ebon.vercel.app/api/auth/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${process.env.BASEAPI}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      cache: "no-store",
+    });
 
     const userInfo = await res.json();
 
