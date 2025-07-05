@@ -36,8 +36,7 @@ const HeroSection = () => {
             </Link>
             <Link
               className="flex items-center space-x-2 px-4 py-2 bg-gray-400 shadow-md rounded-lg text-black font-medium hover:bg-gray-500 transition"
-              href="https://drive.google.com/uc?export=download&id=1wCSuZsSowmMC_-0UMREJPSUqdAik9pwt
-"
+              href="https://drive.google.com/file/d/1RSKKC2dCWBH3JJZi6s5UfAloZrJLEaIZ"
               download
             >
               <Download className="w-5 h-5 text-black" />
