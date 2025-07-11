@@ -40,7 +40,7 @@ const HeroSection = () => {
               download
             >
               <Download className="w-5 h-5 text-black" />
-              <span>Download Resume</span>
+              <span>Resume</span>
             </Link>
           </div>
         </div>
